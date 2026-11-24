@@ -1,0 +1,3219 @@
+
+انتا senior software engineer & senior ai engineer
+انتا project manage (الاهم)
+دا مشروع مطلوب يتنفذ بواسطة تيم عدده 7 عايزك تحلل المشروع دا كويس جدا جدا وتفهم كل جزئيه فيه من غير ما تفوت ولا جزئيه حتي لو كانت بسيطه جدا بردو تفهمها و تحللها كويس جدا
+
+مطلوب منك الآتي :
+1-تفهمني فكرة المشروع نفسه قايمه علي ايه و توصفلي وصف دقيق جدا جدا للمشروع بحيث ابقي ملم بكل تفاصيله و كل المعلومات اللي فيه من غير ما نفوت اي معلومه يفضل الشرح بتاعك يكون مبسط جدا بحيث ابقي فاهم كل نقطه بنسبة 100%
+
+2-تحددلي ايه بالظبط المطلوب علشان المشروع دا يتم علي اكمل وجه من غير نسبة خطأ حتي لو بسيطه جدا , الخطأ مرفوض تماما ; ف عايز افهم كل حاجه عنه زي (ال algorithms المناسب لحل المشكله , ال stacks اللي المفروض نشتغل عليها علشان المشروع يبقي متكامل , ... و كل ما هو مطلوب لفهم طبيعة اللي هنشتغل عليه
+
+دي تفاصيل المشروع :
+
+Data Mining Task 
+• First, the project team must contain 7-8 members.  
+• Secondly, the team will deliver three tasks: 1- Regression problem 2- 
+Classification problem 3- Association Rule.  For each team the idea from each 
+category will be assigned after closing the team’s registration form.
+
+Classification :
+4- Customer Churn Prediction: Predict whether a customer will leave a service or stay.  
+
+
+ Regression :
+4- Energy Consumption Prediction: Forecast energy usage based on environmental 
+and usage data.
+
+
+:Association Rules 
+2- Product Recommendation System: recommend items based on customer 
+purchasing patterns.  
+
+
+
+Classification 
+• NSL-KDD  
+• UNSW-NB15 
+• CICIDS2017 
+• UCI Heart Disease 
+• SpamAssassin  
+• Kaggle spam datasets 
+                Regression 
+• Kaggle House Prices 
+• Kaggle Used Cars dataset 
+• UCI Student Performance 
+                 Association Rule 
+• Online Retail dataset (UCI) 
+• Grocery dataset (Kaggle) 
+• MovieLens 
+B. Perform all preprocessing steps needed for each task such as Including, but not 
+limited to [4 Marks]: 
+• Remove duplicates  
+• Encoding independent and dependent variables 
+• Feature scaling  
+• Handle imbalance  
+• Feature selection  
+• Handling missing values 
+• Outliers’ detection 
+ 
+C. Train/Test Split (e.g., 80/20) OR Cross-validation [1 Mark]: 
+D. Predict the output of new values [2 Marks]. 
+E. visualizes the dataset after performing the model (predicted results VS. actual 
+results) [2 Marks]. 
+F. Evaluation metrics for each problem [3 Marks] 
+Classification 
+• Accuracy  
+• Precision  
+• Recall  
+• F1-Score  
+• Confusion Matrix  
+• ROC-AUC 
+Regression 
+• MSE (Mean Squared Error) or RMSE 
+• R² Score 
+Association Rules 
+• Support  
+• Confidence 
+• Lift 
+G. You must make the necessary visualizations that support your projects [2 Marks]. 
+Note That the grading criteria are 16 grades for the project and 4 for individual questions.
+…
+خلينا نتعامل مع المشروع ده باعتباره مشروع Software Engineering متكامل، مش مجرد Assignment في مادة Data Mining.
+
+هتعامل معاك من 3 زوايا في نفس الوقت:
+
+Senior Data Scientist: اختيار الخوارزميات، فهم البيانات، المعالجة، التدريب، والتقييم.
+Senior Software Engineer & AI Engineer: اختيار الـ Technologies، تصميم Architecture، تنظيم الكود، وبناء نظام متكامل قابل للاستخدام.
+Project Manager: تقسيم المشروع إلى مهام واضحة، توزيع المسؤوليات على 7 أعضاء، إدارة الـ Dependencies، تحديد مراحل التنفيذ، ومراجعة جودة التسليم.
+وهحلل المطلوب من ملف الـ PDF نفسه، مع التمييز بين المتطلبات الرسمية والتوصيات الهندسية الإضافية.
+
+أولاً: نفهم المشروع بشكل كامل
+1. ما هي فكرة المشروع؟
+المشروع عبارة عن تطبيق عملي لمفاهيم Data Mining.
+
+بمعنى إننا هنمتلك مجموعة من البيانات (Dataset)، وهنستخدم تقنيات تحليل البيانات وخوارزميات Machine Learning لاستخراج معلومات وأنماط منها، وبعد كده نستخدم الأنماط دي في التنبؤ أو اتخاذ القرارات.
+
+المطلوب من كل Team تنفيذ 3 مشروعات مستقلة من 3 أنواع مختلفة:
+
+المشروع	النوع	الفكرة الأساسية
+Customer Churn Prediction	Classification	التنبؤ هل العميل هيترك الخدمة أم سيستمر
+Energy Consumption Prediction	Regression	التنبؤ باستهلاك الطاقة
+Product Recommendation System	Association Rules	اكتشاف المنتجات التي يتم شراؤها مع بعضها واقتراحها للعملاء
+إذن إحنا مش بنعمل Model واحد بيحل 3 مشاكل.
+
+إحنا بنعمل 3 Data Mining Pipelines مستقلة، كل واحدة لها طبيعة مختلفة وخوارزميات مختلفة وطرق تقييم مختلفة.
+
+وده أول مفهوم مهم لازم يكون واضح عندك.
+
+2. المطلوب الرسمي من ملف المشروع
+الـ PDF بيحدد مجموعة من الشروط:
+
+أولاً: Team Size
+عدد أعضاء الفريق من 7 إلى 8 أعضاء.
+
+ثانياً: تنفيذ 3 أنواع من المشكلات
+Regression Problem.
+Classification Problem.
+Association Rules.
+والملف بيذكر إن الأفكار المحددة لكل Team يتم تعيينها بعد إغلاق التسجيل.
+
+لكن وفقاً للتفاصيل اللي أرسلتها، هنعتمد الأفكار الثلاثة التالية في تحليلنا:
+
+Classification: Customer Churn Prediction.
+Regression: Energy Consumption Prediction.
+Association Rules: Product Recommendation System.
+الملف الأصلي بيعرض أفكاراً أخرى لكل تصنيف، لكن دي الأفكار التي اخترتها في وصفك للمشروع.
+
+ثالثاً: Dataset
+كل مشروع لازم يكون عنده Dataset مناسبة.
+
+والملف أعطى أمثلة لمصادر بيانات مقترحة، لكنه لم يفرض Dataset بعينها.
+
+رابعاً: Preprocessing
+تنفيذ خطوات تجهيز البيانات المطلوبة، ومنها:
+
+Remove Duplicates.
+Encoding.
+Feature Scaling.
+Handling Imbalanced Data.
+Feature Selection.
+Handling Missing Values.
+Outlier Detection.
+خامساً: Train/Test
+تقسيم البيانات إلى Training وTesting، مثل 80/20، أو استخدام Cross-validation.
+
+سادساً: Prediction
+لازم نقدر ندخل بيانات جديدة ونحصل على Prediction من الـ Model.
+
+سابعاً: Visualization
+عرض Actual Results مقابل Predicted Results، بالإضافة إلى الرسومات التي تدعم المشروع.
+
+ثامناً: Evaluation
+تقييم كل مشروع باستخدام الـ Metrics المناسبة لنوع المشكلة.
+
+دي المتطلبات الرسمية الأساسية كما وردت في الملف.
+
+ثانياً: نفهم المشاريع الثلاثة بالتفصيل
+المشروع الأول: Customer Churn Prediction
+1. ما المقصود بـ Customer Churn؟
+خلينا نفترض إن عندنا شركة اتصالات عندها 100,000 عميل.
+
+الشركة بتلاحظ إن بعض العملاء بيوقفوا اشتراكاتهم وبيتحولوا لشركات منافسة.
+
+الشركة عايزة تعرف:
+
+مين العملاء المتوقع إنهم يتركوا الخدمة؟
+إيه العوامل اللي بتخلي العميل يترك الشركة؟
+هل مدة الاشتراك بتأثر؟
+هل السعر المرتفع بيزود احتمالية مغادرة العميل؟
+هل العملاء اللي عندهم مشاكل متكررة في الخدمة أكثر عرضة للمغادرة؟
+هنا بيظهر دور الـ Machine Learning.
+
+بدلاً من انتظار العميل حتى يترك الخدمة، بنبني Model يتوقع احتمالية مغادرته.
+
+بمعنى آخر: إحنا بنحاول نتوقع سلوك العميل في المستقبل باستخدام المعلومات المتاحة عنه.
+
+2. مثال عملي
+تخيل إن عندنا Dataset بالشكل ده:
+
+Customer ID	Age	Tenure	Monthly Charges	Contract	Churn
+1001	25	2	80	Monthly	Yes
+1002	40	36	50	Yearly	No
+1003	31	5	95	Monthly	Yes
+1004	55	60	45	Yearly	No
+تعالى نفهم الأعمدة:
+
+Customer ID: رقم العميل.
+Age: عمر العميل.
+Tenure: عدد الشهور اللي قضاها مع الشركة.
+Monthly Charges: الاشتراك الشهري.
+Contract: نوع العقد.
+Churn: هل العميل ترك الشركة؟
+هنا عندنا نوعان من البيانات:
+
+Features (X):
+
+المعلومات اللي هنستخدمها للتنبؤ.
+
+زي:
+
+Age.
+Tenure.
+Monthly Charges.
+Contract.
+Target (Y):
+
+النتيجة اللي عايزين نتوقعها.
+
+وهي:
+
+Churn.
+الـ Model هيتعلم العلاقة بين X و Y.
+
+وبعد التدريب، ممكن ندخله عميل جديد:
+
+customer = {
+    "age": 29,
+    "tenure": 3,
+    "monthly_charges": 90,
+    "contract": "Monthly"
+}
+
+والنتيجة المتوقعة:
+
+Prediction: Customer Will Churn
+
+Churn Probability: 87%
+النسبة هنا مجرد مثال توضيحي وليست نتيجة Model حقيقي.
+
+3. نوع المشكلة: Classification
+Classification معناها إننا بنحاول نحدد الفئة (Category) التي تنتمي إليها البيانات.
+
+في مشروعنا عندنا فئتان:
+
+0 = Customer Will Stay.
+1 = Customer Will Leave.
+وده اسمه:
+
+Binary Classification
+
+لأن عندنا نتيجتين محتملتين فقط.
+
+4. أنسب Algorithms للمشروع
+مش كل Algorithms مناسبة بنفس الدرجة.
+
+خلينا ندرس الخيارات:
+
+A. Logistic Regression
+واحدة من أشهر خوارزميات الـ Classification.
+
+رغم وجود كلمة Regression في اسمها، فهي تستخدم في Classification.
+
+بتحسب احتمال انتماء العميل لفئة معينة.
+
+مثلاً:
+
+P(Churn = Yes) = 0.85
+P(Churn = No) = 0.15
+لو الاحتمال أعلى من Threshold معين، بنصنف العميل على إنه معرض للمغادرة.
+
+مميزاتها:
+
+سهلة الفهم.
+سريعة.
+مناسبة كبداية.
+قابلة للتفسير نسبياً.
+عيوبها:
+
+قد لا تتعامل بكفاءة مع العلاقات المعقدة بين Features.
+B. Decision Tree
+بتشتغل عن طريق مجموعة من الأسئلة والقرارات.
+
+مثلاً:
+
+Is Tenure < 6 months?
+       |
+      Yes
+       |
+Is Monthly Charges > 80?
+       |
+      Yes
+       |
+High Churn Risk
+مميزاتها:
+
+سهلة الفهم والشرح.
+بتتعامل مع العلاقات غير الخطية.
+ممكن نعرض طريقة اتخاذ القرار بصرياً.
+C. Random Forest
+دي من أقوى الاختيارات للمشروع.
+
+بدلاً من الاعتماد على Decision Tree واحدة، بنبني مجموعة من الأشجار.
+
+كل شجرة بتعمل Prediction، وبعد كده بنجمع النتائج للوصول إلى القرار النهائي.
+
+مميزاتها:
+
+أداء جيد على البيانات الجدولية.
+بتقلل مشكلة Overfitting مقارنة بشجرة واحدة في حالات كثيرة.
+بتتعامل مع العلاقات المعقدة.
+ممكن نستخدمها لمعرفة أهمية كل Feature.
+D. XGBoost
+خوارزمية Gradient Boosting بتبني مجموعة من الأشجار بشكل متتابع.
+
+كل مرحلة بتحاول تحسين الأخطاء التي ارتكبتها المراحل السابقة.
+
+مميزاتها:
+
+قوية جداً على Tabular Data.
+غالباً بتقدم نتائج تنافسية.
+فيها إمكانيات كثيرة للتحكم في التدريب.
+عيوبها:
+
+محتاجة Tuning.
+تفسيرها أصعب من Logistic Regression وDecision Tree.
+ترشيحي للمشروع
+أنصح بالتالي:
+
+Algorithm	الاستخدام
+Logistic Regression	Baseline Model
+Decision Tree	Model للمقارنة والتفسير
+Random Forest	Main Model
+XGBoost	Advanced Comparison
+مش لازم نستخدم الأربعة، لكن وجود مقارنة بين 2 أو 3 Models هيكون مفيد جداً.
+
+والاختيار النهائي لازم يعتمد على نتائج الـ Validation، مش على شهرة الخوارزمية.
+
+5. Dataset المناسبة
+الملف ذكر Datasets مقترحة للـ Classification، منها:
+
+NSL-KDD.
+UNSW-NB15.
+CICIDS2017.
+UCI Heart Disease.
+SpamAssassin.
+Kaggle Spam Datasets.
+لكن لازم ننتبه لحاجة مهمة:
+
+الـ Datasets دي مش كلها مناسبة لمشروع Customer Churn.
+
+مثلاً:
+
+NSL-KDD خاصة بـ Network Intrusion Detection.
+UCI Heart Disease خاصة بتوقع أمراض القلب.
+SpamAssassin خاصة بتصنيف البريد المزعج.
+إحنا محتاجين Dataset فيها بيانات عملاء وعمود يوضح هل العميل ترك الخدمة أم لا.
+
+ممكن نستخدم:
+
+IBM Telco Customer Churn Dataset
+
+ودي من أشهر الـ Datasets المناسبة للمشكلة دي.
+
+ممكن نشتغل على Dataset فيها معلومات مثل:
+
+Customer Demographics.
+Services.
+Contract Information.
+Payment Information.
+Charges.
+Churn Status.
+6. Preprocessing الخاص بالـ Classification
+دي من أهم مراحل المشروع، وخلينا نفهم كل خطوة.
+
+1. Remove Duplicates
+لو فيه صفوف مكررة، لازم نتعامل معاها.
+
+مثلاً:
+
+Customer ID	Age	Churn
+1001	25	Yes
+1001	25	Yes
+وجود بيانات مكررة ممكن يأثر على نتائج التدريب.
+
+لكن لازم نراجع سبب التكرار قبل الحذف، لأن تكرار العميل في بيانات زمنية مختلفة قد يكون صحيحاً.
+
+2. Handling Missing Values
+ممكن يكون فيه بيانات ناقصة.
+
+مثلاً:
+
+Customer	Age	Monthly Charges
+A	25	100
+B	NaN	150
+C	35	NaN
+عندنا حلول مختلفة:
+
+Mean Imputation.
+Median Imputation.
+Mode Imputation.
+حذف الصفوف في حالات مناسبة.
+اختيار الطريقة بيعتمد على نوع البيانات وتوزيعها وسبب فقدانها.
+
+3. Encoding
+الـ Machine Learning Algorithms غالباً محتاجة بيانات رقمية.
+
+لكن عندنا بيانات نصية مثل:
+
+Contract = Monthly
+Contract = Yearly
+Contract = Two Years
+هنحولها لأرقام باستخدام:
+
+One-Hot Encoding.
+Ordinal Encoding عند وجود ترتيب حقيقي.
+Binary Encoding في الحالات المناسبة.
+بالنسبة لـ Churn نفسه:
+
+Yes = 1
+No = 0
+4. Feature Scaling
+بعض الخوارزميات بتتأثر باختلاف مقاييس البيانات.
+
+مثلاً:
+
+Age = 25
+Monthly Charges = 5000
+Tenure = 12
+ممكن نستخدم:
+
+StandardScaler.
+MinMaxScaler.
+لكن مش كل Algorithms محتاجة Scaling.
+
+مثلاً Random Forest وDecision Tree مش محتاجين Scaling عادةً.
+
+5. Handling Imbalanced Data
+دي نقطة مهمة جداً.
+
+تخيل إن عندنا:
+
+90% من العملاء بيستمروا.
+10% فقط بيتركوا الشركة.
+لو عملنا Model بيتوقع إن كل العملاء هيستمروا، ممكن يحقق Accuracy = 90%.
+
+لكن في الحقيقة هو فشل تماماً في اكتشاف العملاء اللي هيتركوا الخدمة!
+
+عشان كده لازم نتعامل مع Imbalanced Data.
+
+الحلول:
+
+Class Weights.
+Random Oversampling.
+Random Undersampling.
+SMOTE.
+مهم جداً: أي عملية Resampling لازم تحصل على Training Data فقط، وليس قبل تقسيم البيانات؛ لتجنب Data Leakage.
+
+6. Feature Selection
+مش كل الأعمدة بتكون مفيدة.
+
+ممكن نلاقي إن:
+
+Customer ID مش مفيد للتنبؤ.
+Tenure مؤثر.
+Contract Type مؤثر.
+Monthly Charges مؤثر.
+ممكن نستخدم:
+
+Correlation Analysis.
+Feature Importance.
+Mutual Information.
+Recursive Feature Elimination.
+7. Outlier Detection
+الـ Outliers هي القيم غير الطبيعية أو البعيدة جداً عن التوزيع المعتاد.
+
+مثلاً:
+
+Monthly Charges:
+
+50
+60
+70
+80
+5000
+القيمة 5000 محتاجة مراجعة.
+
+ممكن نستخدم:
+
+IQR.
+Z-Score.
+Boxplots.
+لكن مش كل Outlier لازم نحذفه؛ ممكن يكون قيمة صحيحة ومهمة.
+
+7. Evaluation Metrics
+الملف طالب:
+
+Accuracy.
+Precision.
+Recall.
+F1-Score.
+Confusion Matrix.
+ROC-AUC.
+خلينا نفهمهم.
+
+Accuracy
+نسبة التوقعات الصحيحة من إجمالي التوقعات.
+
+مثلاً لو توقعنا 100 عميل صح من أصل 120:
+
+Accuracy = 83.33%.
+
+Precision
+من كل العملاء اللي الـ Model قال إنهم هيتركوا الشركة، كام واحد فعلاً تركها؟
+
+Precision مهم لما تكون تكلفة التدخل مع العملاء الذين لن يتركوا الشركة مرتفعة.
+
+Recall
+من كل العملاء اللي فعلاً تركوا الشركة، كام واحد قدرنا نكتشفه؟
+
+ودي مهمة جداً في Churn Prediction.
+
+لأن الشركة عايزة تكتشف أكبر عدد ممكن من العملاء المعرضين للمغادرة.
+
+F1-Score
+مقياس بيجمع بين Precision و Recall.
+
+مفيد خصوصاً لما تكون البيانات Imbalanced.
+
+Confusion Matrix
+بتوضح:
+
+Predicted Stay	Predicted Churn
+Actual Stay	TN	FP
+Actual Churn	FN	TP
+ومن خلالها بنعرف نوع الأخطاء اللي الـ Model بيعملها.
+
+ROC-AUC
+بتقيس قدرة الـ Model على التمييز بين الفئتين عبر Thresholds مختلفة.
+
+كلما اقتربت من 1 كان التمييز أفضل عموماً.
+
+ملحوظة مهمة: مش هنختار الـ Model بناءً على Accuracy فقط. لازم نراعي Recall وPrecision وF1، ونحدد الأولوية حسب طبيعة المشكلة.
+
+المشروع الثاني: Energy Consumption Prediction
+1. فكرة المشروع
+هنا إحنا مش عايزين نصنف حاجة إلى فئات.
+
+إحنا عايزين نتوقع قيمة رقمية.
+
+تخيل إن عندنا مبنى أو منزل أو مصنع، وعايزين نتوقع كمية الطاقة اللي هيستهلكها.
+
+الاستهلاك ممكن يتأثر بعوامل كثيرة:
+
+درجة الحرارة.
+الرطوبة.
+عدد الأشخاص.
+مساحة المبنى.
+عدد الأجهزة.
+وقت اليوم.
+اليوم من الأسبوع.
+الموسم.
+الاستهلاك السابق.
+الهدف إننا نستخدم البيانات دي للتنبؤ باستهلاك الطاقة.
+
+مثلاً:
+
+Temperature: 32°C
+Humidity: 60%
+Occupants: 5
+Hour: 18
+Previous Consumption: 15 kWh
+الـ Model يتوقع:
+
+Predicted Energy Consumption: 21.5 kWh
+الرقم مجرد مثال.
+
+2. نوع المشكلة: Regression
+الفرق الأساسي:
+
+Classification بتتوقع Category.
+
+Regression بتتوقع Continuous Numerical Value.
+
+مثلاً:
+
+Classification	Regression
+Customer will leave	Energy = 25.5 kWh
+Spam / Not Spam	House Price = 2M
+Sick / Healthy	Temperature = 30.5
+في مشروعنا:
+
+Target Variable = Energy Consumption
+
+3. Dataset المناسبة
+الملف ذكر Datasets للـ Regression:
+
+Kaggle House Prices.
+Kaggle Used Cars.
+UCI Student Performance.
+لكن مفيش Dataset مخصصة لاستهلاك الطاقة ضمن القائمة دي.
+
+وبالتالي لازم نختار Dataset مناسبة للمشروع.
+
+أرشح:
+
+UCI Appliances Energy Prediction Dataset
+
+دي مناسبة جداً للمشكلة، لأنها تحتوي على بيانات مرتبطة باستهلاك الطاقة وظروف البيئة داخل المنزل.
+
+من أمثلة المتغيرات الموجودة في هذا النوع من البيانات:
+
+Temperature.
+Humidity.
+Lighting.
+Time Information.
+Appliances Energy Consumption.
+وممكن أيضاً دراسة:
+
+Individual Household Electric Power Consumption.
+Building Energy Consumption datasets.
+لكن لازم نختار Dataset واحدة ونفهم الـ Target والـ Features الموجودة فيها قبل بناء الـ Model.
+
+4. فهم شكل البيانات
+تخيل الجدول بالشكل ده:
+
+Temperature	Humidity	Hour	Occupants	Energy Consumption
+25	45	10	2	15.5
+30	60	14	4	25.2
+35	70	18	5	32.8
+20	40	22	1	10.3
+المطلوب إن الـ Model يتعلم العلاقة بين الظروف المحيطة واستهلاك الطاقة.
+
+5. أنسب Algorithms للـ Regression
+A. Linear Regression
+أبسط نموذج ممكن نبدأ به.
+
+بيحاول إيجاد علاقة رياضية بين الـ Features والـ Target.
+
+مثلاً:
+
+كلما زادت درجة الحرارة، قد يزيد استهلاك الطاقة بسبب التكييف.
+
+المعادلة بشكل مبسط:
+
+Y
+=
+b
+0
++
+b
+1
+X
+1
++
+b
+2
+X
+2
++
+.
+.
+.
++
+b
+n
+X
+n
+Y=b 
+0
+​
+ +b 
+1
+​
+ X 
+1
+​
+ +b 
+2
+​
+ X 
+2
+​
+ +...+b 
+n
+​
+ X 
+n
+​
+ 
+حيث:
+
+Y = Energy Consumption.
+X = Features.
+b = Model Coefficients.
+مميزاته:
+
+بسيط.
+سريع.
+سهل التفسير.
+Baseline ممتاز.
+عيوبه:
+
+مش بالضرورة يلتقط العلاقات المعقدة.
+B. Decision Tree Regressor
+نفس فكرة Decision Tree، لكن بدلاً من إخراج Category، بيخرج قيمة رقمية.
+
+مثلاً:
+
+Is Temperature > 30?
+       |
+      Yes
+       |
+Is Humidity > 60?
+       |
+      Yes
+       |
+Predicted Energy = 30 kWh
+C. Random Forest Regressor
+مجموعة من Regression Trees.
+
+كل شجرة بتنتج قيمة، والنتائج بتتجمع للوصول إلى Prediction نهائي.
+
+مميزاته:
+
+قوي مع البيانات الجدولية.
+يلتقط العلاقات غير الخطية.
+أقل عرضة للـ Overfitting من شجرة منفردة في كثير من الحالات.
+D. Gradient Boosting / XGBoost Regressor
+من الخيارات القوية جداً للـ Regression.
+
+بتبني مجموعة من الأشجار بشكل متتابع لتحسين التنبؤات.
+
+E. Support Vector Regression (SVR)
+ممكن نستخدمه للمقارنة، خصوصاً لو حجم البيانات مناسب.
+
+لكنه يحتاج Scaling وضبط Hyperparameters.
+
+ترشيحي
+Algorithm	الاستخدام
+Linear Regression	Baseline
+Decision Tree Regressor	Comparison
+Random Forest Regressor	Main Candidate
+XGBoost Regressor	Advanced Candidate
+6. Preprocessing الخاص بالـ Regression
+معظم الخطوات السابقة هتكون موجودة، لكن فيه اختلافات مهمة.
+
+Remove Duplicates
+نتأكد من عدم وجود بيانات مكررة بشكل غير مبرر.
+
+Missing Values
+نعالج القيم الناقصة.
+
+ممكن نستخدم:
+
+Mean.
+Median.
+Interpolation للبيانات الزمنية عندما يكون مناسباً.
+Encoding
+لو فيه بيانات نصية مثل:
+
+Day = Monday
+Season = Summer
+نحولها إلى أرقام باستخدام Encoding مناسب.
+
+Feature Scaling
+مهم خصوصاً مع:
+
+Linear Regression في بعض الحالات التي تتضمن Regularization.
+SVR.
+KNN Regression.
+Neural Networks.
+لكن مش ضروري عادةً لـ Random Forest وDecision Tree.
+
+Outlier Detection
+مثلاً لو عندنا استهلاك طاقة 10,000 kWh في حين إن أغلب القيم أقل من 100.
+
+لازم نتحقق هل القيمة:
+
+خطأ في تسجيل البيانات.
+قراءة غير طبيعية.
+حدث حقيقي يستحق الاحتفاظ به.
+Feature Selection
+نحدد أهم المتغيرات المؤثرة على الاستهلاك.
+
+ممكن نستخدم:
+
+Correlation Matrix.
+Feature Importance.
+Mutual Information.
+نقطة مهمة جداً: Time Series
+لازم نعرف هل الـ Dataset بتحتوي على بيانات مرتبة زمنياً أم لا.
+
+لو بنستخدم بيانات زمنية للتنبؤ بالمستقبل، ممنوع نعمل Random Train/Test Split بشكل عشوائي دون دراسة طبيعة البيانات.
+
+الأفضل نستخدم Chronological Split:
+
+Oldest Data       Newest Data
+|--------------------------|
+|      Training    | Test  |
+يعني ندرب على البيانات القديمة ونختبر على البيانات الأحدث.
+
+وده بيمنع إننا نستخدم معلومات من المستقبل في التنبؤ بالماضي.
+
+7. Evaluation Metrics
+الملف طالب:
+
+MSE أو RMSE.
+R² Score.
+MSE
+Mean Squared Error.
+
+بيحسب متوسط مربعات الفرق بين القيمة الحقيقية والمتوقعة.
+
+M
+S
+E
+=
+1
+n
+∑
+i
+=
+1
+n
+(
+y
+i
+−
+y
+^
+i
+)
+2
+MSE= 
+n
+1
+​
+  
+i=1
+∑
+n
+​
+ (y 
+i
+​
+ − 
+y
+^
+​
+  
+i
+​
+ ) 
+2
+ 
+كلما قل MSE كان أفضل.
+
+RMSE
+الجذر التربيعي للـ MSE.
+
+R
+M
+S
+E
+=
+M
+S
+E
+RMSE= 
+MSE
+​
+ 
+مميزاته إن وحدته نفس وحدة الـ Target.
+
+لو بنقيس استهلاك الطاقة بـ kWh، الـ RMSE هيكون بـ kWh.
+
+R² Score
+بيقيس مدى قدرة النموذج على تفسير التغير في البيانات.
+
+بشكل عام:
+
+1 = أفضل تطابق.
+0 = لا يتفوق على توقع متوسط القيم في المعنى المعتاد للمقياس.
+قيمة سالبة = النموذج أسوأ من توقع المتوسط على مجموعة الاختبار.
+8. Visualization
+في المشروع ده لازم نهتم بالرسومات التالية:
+
+1. Actual vs Predicted Plot
+
+مقارنة الاستهلاك الحقيقي بالاستهلاك المتوقع.
+
+2. Residual Plot
+
+الـ Residual هو الفرق بين القيمة الحقيقية والمتوقعة.
+
+R
+e
+s
+i
+d
+u
+a
+l
+=
+A
+c
+t
+u
+a
+l
+−
+P
+r
+e
+d
+i
+c
+t
+e
+d
+Residual=Actual−Predicted
+بنستخدمه لفهم طبيعة أخطاء النموذج.
+
+3. Feature Importance
+
+نعرض أهم العوامل التي تؤثر على استهلاك الطاقة.
+
+4. Correlation Heatmap
+
+بتوضح العلاقة بين المتغيرات المختلفة.
+
+5. Energy Consumption Over Time
+
+لو البيانات زمنية، نعرض تغير استهلاك الطاقة خلال الوقت.
+
+المشروع الثالث: Product Recommendation System
+ده مختلف عن المشروعين السابقين بشكل كبير.
+
+ومهم جداً نفهمه كويس، لأن Association Rules مش مجرد Classification أو Regression.
+
+1. فكرة المشروع
+تخيل إن عندنا متجر إلكتروني بيبيع منتجات مختلفة.
+
+العملاء بيشتروا منتجات متعددة في نفس الطلب.
+
+مثلاً:
+
+Transaction 1:
+
+Milk
+Bread
+Butter
+Transaction 2:
+
+Milk
+Bread
+Eggs
+Transaction 3:
+
+Bread
+Butter
+Eggs
+Transaction 4:
+
+Milk
+Bread
+Butter
+إحنا عايزين نكتشف:
+
+هل العملاء اللي بيشتروا Milk بيشتروا Bread أيضاً؟
+هل فيه علاقة بين Bread و Butter؟
+هل فيه منتجات بتظهر مع بعضها بشكل متكرر؟
+لو العميل اشترى منتج معين، إيه المنتجات اللي ممكن نقترحها عليه؟
+هنا بنستخدم Association Rule Mining.
+
+2. ما المقصود بـ Association Rules؟
+هي تقنية هدفها اكتشاف العلاقات والأنماط المتكررة بين العناصر داخل مجموعة من المعاملات.
+
+مثلاً:
+
+Milk → Bread
+معناها:
+
+العملاء اللي بيشتروا Milk غالباً بيشتروا Bread أيضاً.
+
+لكن مهم جداً نفهم إن:
+
+Association لا تعني السببية (Causation).
+
+يعني مش معنى إن Milk مرتبط بـ Bread إن شراء Milk هو السبب في شراء Bread.
+
+3. Dataset المناسبة
+الملف اقترح:
+
+Online Retail Dataset (UCI).
+Grocery Dataset (Kaggle).
+MovieLens.
+أنا أرشح Online Retail Dataset كبداية.
+
+ليه؟
+
+لأنها بتحتوي على معاملات شراء فعلية، ومن خلالها نقدر نكتشف المنتجات اللي بيتم شراؤها مع بعضها.
+
+غالباً هنحتاج أعمدة زي:
+
+InvoiceNo	StockCode	Description	Quantity
+10001	P001	Milk	2
+10001	P002	Bread	1
+10001	P003	Butter	1
+10002	P001	Milk	1
+10002	P002	Bread	2
+هنا:
+
+InvoiceNo = Transaction ID.
+
+وكل Transaction ممكن تحتوي على أكثر من Product.
+
+وده جوهر المشروع.
+
+4. Algorithms الخاصة بـ Association Rules
+فيه 3 Algorithms أساسية لازم نعرفهم.
+
+A. Apriori Algorithm
+من أشهر الخوارزميات المستخدمة في Market Basket Analysis.
+
+فكرتها إنها بتكتشف مجموعات المنتجات المتكررة.
+
+مثلاً:
+
+Frequent 1-itemsets:
+
+{Milk}
+{Bread}
+{Butter}
+بعد كده تبدأ تبحث عن المجموعات الثنائية:
+
+Frequent 2-itemsets:
+
+{Milk, Bread}
+{Bread, Butter}
+وبعدها المجموعات الأكبر:
+
+Frequent 3-itemsets:
+
+{Milk, Bread, Butter}
+لكن مش كل مجموعة بتكون Frequent.
+
+لازم تحقق الحد الأدنى من Support.
+
+ميزة Apriori إنها سهلة الفهم والشرح، وده مناسب جداً للمشروع الأكاديمي.
+
+عيبها إن الأداء ممكن يتأثر مع البيانات الكبيرة بسبب عدد عمليات البحث والتوليد.
+
+B. FP-Growth
+اختصار لـ Frequent Pattern Growth.
+
+بتستخدم هيكل بيانات اسمه FP-Tree لاكتشاف Frequent Itemsets.
+
+بدلاً من توليد كل المجموعات المرشحة بالطريقة التقليدية في Apriori، بتضغط البيانات وتستخرج الأنماط المتكررة.
+
+مميزاتها:
+
+أسرع غالباً مع Datasets الكبيرة.
+بتقلل عمليات توليد Candidate Itemsets.
+C. ECLAT
+بتستخدم فكرة Vertical Data Representation.
+
+بدلاً من تخزين كل Transaction وما تحتويه فقط، بنخزن لكل Item المعاملات اللي ظهر فيها.
+
+مثلاً:
+
+Milk  = {T1, T2, T4}
+Bread = {T1, T2, T3, T4}
+ومن خلال تقاطع المجموعات نقدر نحسب Support.
+
+ترشيحي
+استخدموا:
+
+Apriori كخوارزمية أساسية.
+FP-Growth للمقارنة إذا كان حجم البيانات مناسباً.
+مش محتاجين ننفذ الخوارزميتين من الصفر؛ ممكن نستخدم مكتبة متخصصة ونشرح طريقة عمل الخوارزمية.
+
+5. أهم 3 Metrics في Association Rules
+الملف حدد:
+
+Support.
+Confidence.
+Lift.
+ودي أهم نقطة لازم كل أعضاء الفريق يفهموها.
+
+خلينا نستخدم المثال التالي:
+
+عندنا 100 Transaction.
+
+40 عملية شراء فيها Milk.
+50 عملية شراء فيها Bread.
+30 عملية شراء فيها Milk و Bread مع بعض.
+أولاً: Support
+بيحسب نسبة المعاملات اللي ظهر فيها Itemset معين.
+
+S
+u
+p
+p
+o
+r
+t
+(
+A
+→
+B
+)
+=
+C
+o
+u
+n
+t
+(
+A
+∪
+B
+)
+T
+o
+t
+a
+l
+T
+r
+a
+n
+s
+a
+c
+t
+i
+o
+n
+s
+Support(A→B)= 
+TotalTransactions
+Count(A∪B)
+​
+ 
+في مثالنا:
+
+S
+u
+p
+p
+o
+r
+t
+(
+M
+i
+l
+k
+,
+B
+r
+e
+a
+d
+)
+=
+30
+100
+=
+0.3
+Support(Milk,Bread)= 
+100
+30
+​
+ =0.3
+إذن:
+
+Support = 30%.
+
+معناها إن 30% من كل عمليات الشراء احتوت على Milk وBread معاً.
+
+ثانياً: Confidence
+بتقيس نسبة الأشخاص اللي اشتروا B من بين الأشخاص اللي اشتروا A.
+
+C
+o
+n
+f
+i
+d
+e
+n
+c
+e
+(
+A
+→
+B
+)
+=
+S
+u
+p
+p
+o
+r
+t
+(
+A
+∪
+B
+)
+S
+u
+p
+p
+o
+r
+t
+(
+A
+)
+Confidence(A→B)= 
+Support(A)
+Support(A∪B)
+​
+ 
+في مثالنا:
+
+C
+o
+n
+f
+i
+d
+e
+n
+c
+e
+(
+M
+i
+l
+k
+→
+B
+r
+e
+a
+d
+)
+=
+30
+40
+=
+0.75
+Confidence(Milk→Bread)= 
+40
+30
+​
+ =0.75
+إذن:
+
+Confidence = 75%.
+
+يعني 75% من العملاء اللي اشتروا Milk اشتروا Bread أيضاً.
+
+ثالثاً: Lift
+بتقيس قوة العلاقة بين A و B مقارنة بمعدل شراء B الطبيعي.
+
+L
+i
+f
+t
+(
+A
+→
+B
+)
+=
+C
+o
+n
+f
+i
+d
+e
+n
+c
+e
+(
+A
+→
+B
+)
+S
+u
+p
+p
+o
+r
+t
+(
+B
+)
+Lift(A→B)= 
+Support(B)
+Confidence(A→B)
+​
+ 
+في مثالنا:
+
+L
+i
+f
+t
+=
+0.75
+0.5
+=
+1.5
+Lift= 
+0.5
+0.75
+​
+ =1.5
+التفسير:
+
+Lift	المعنى
+Greater than 1	ارتباط إيجابي
+Equal to 1	لا يوجد ارتباط إحصائي إضافي عن الاستقلال
+Less than 1	ارتباط سلبي
+إذن Milk وBread عندهم Association إيجابية في المثال.
+
+6. Preprocessing الخاص بالـ Association Rules
+هنا المعالجة مختلفة عن Classification وRegression.
+
+1. Remove Duplicates
+لازم نراجع تكرار المنتجات داخل نفس الفاتورة.
+
+مثلاً:
+
+Invoice 1:
+
+Milk
+Milk
+Bread
+هل تكرار Milk معناه إن العميل اشترى وحدتين؟
+
+ده بيعتمد على شكل الـ Dataset.
+
+لو الهدف معرفة وجود المنتج داخل الفاتورة فقط، ممكن نحوله إلى Binary Presence.
+
+لكن لو التكرار بيعبر عن Quantity، لازم نتعامل معاه حسب طبيعة البيانات.
+
+2. Handling Missing Values
+ممكن يكون فيه:
+
+Missing Product Names.
+Missing Transaction IDs.
+Missing Quantities.
+لازم نحدد هل الصف قابل للاستخدام أم لا.
+
+3. Remove Invalid Transactions
+في Online Retail مثلاً لازم ننتبه إلى:
+
+Cancelled Orders.
+Returned Items.
+Negative Quantities.
+Invalid Invoices.
+لكن ما نحذفش كل البيانات السالبة بشكل عشوائي؛ لازم نفهم معناها الأول.
+
+4. Transaction Encoding
+دي من أهم الخطوات.
+
+هنحول البيانات من شكل:
+
+Transaction	Product
+T1	Milk
+T1	Bread
+T2	Milk
+T2	Butter
+إلى:
+
+Transaction	Milk	Bread	Butter
+T1	1	1	0
+T2	1	0	1
+ده اسمه:
+
+One-Hot Transaction Encoding
+
+5. Feature Scaling
+عادةً مش محتاجين Feature Scaling في Association Rule Mining؛ لأننا بنتعامل مع وجود العناصر داخل المعاملات وحساب التكرارات والنسب.
+
+6. Feature Selection
+مش بالضرورة نستخدم Feature Selection بنفس المفهوم الموجود في Classification.
+
+ممكن نختار:
+
+المنتجات الأكثر ظهوراً.
+المنتجات ذات الصلة بالمشكلة.
+إزالة المنتجات غير المفيدة أو غير الصالحة للتحليل.
+7. Outliers
+ممكن نراجع:
+
+الفواتير ذات الكميات غير الطبيعية.
+المعاملات الضخمة جداً.
+المنتجات ذات الكميات الشاذة.
+لكن لازم نفرق بين خطأ البيانات وبين Bulk Orders الحقيقية.
+
+7. كيف يتحول Association Rule إلى Recommendation System؟
+هنا فيه نقطة مهمة.
+
+استخراج Association Rules وحده مش معناه إننا بنينا Recommendation System كامل.
+
+لازم نعمل Logic يستخدم القواعد لاختيار المنتجات المقترحة.
+
+مثلاً:
+
+عندنا القاعدة:
+
+Milk → Bread
+لو العميل أضاف Milk إلى سلة المشتريات:
+
+النظام يبحث عن Rules التي تحتوي على Milk في الـ Antecedent، ويعرض Bread كاقتراح.
+
+مثال للنتيجة:
+
+Customer Selected:
+
+Milk
+
+Recommended Products:
+
+1. Bread
+2. Butter
+3. Eggs
+الاقتراحات دي لازم تكون مبنية على القواعد المستخرجة فعلياً.
+
+كمان لازم نراعي:
+
+عدم اقتراح منتج موجود بالفعل في السلة.
+ترتيب التوصيات بناءً على Confidence أو Lift أو معايير أخرى.
+إمكانية وجود أكثر من قاعدة لنفس المنتج.
+عدم إظهار توصيات ضعيفة لمجرد أنها اجتازت Support فقط.
+وبكده نكون بنينا نظام Recommendation بسيط مبني على Association Rules، وهو متوافق مع طبيعة المطلوب.
+
+ثالثاً: إيه الـ Technology Stack المناسب للمشروع؟
+دلوقتي ننتقل من Data Science إلى Software Engineering.
+
+السؤال هنا: هنستخدم إيه علشان ننفذ المشروعات الثلاثة بشكل احترافي؟
+
+1. Programming Language
+ترشيحي الأساسي:
+
+Python
+
+ليه؟
+
+لأنها من أهم اللغات المستخدمة في Data Science وMachine Learning.
+
+وفيها Ecosystem متكامل للتعامل مع:
+
+Data Processing.
+Data Analysis.
+Machine Learning.
+Data Visualization.
+Model Evaluation.
+2. Libraries
+دي أهم المكتبات اللي هنحتاجها:
+
+Library	الاستخدام
+NumPy	Numerical Computing
+Pandas	Data Manipulation
+Matplotlib	Data Visualization
+Seaborn	Statistical Visualization
+Scikit-learn	Machine Learning
+Imbalanced-learn	Handling Imbalanced Data
+XGBoost	Gradient Boosting
+MLxtend	Association Rules
+Joblib	Saving and Loading Models
+خليني أوضح أهم 3 مكتبات:
+
+Pandas
+
+هنستخدمها في:
+
+قراءة CSV.
+تنظيف البيانات.
+التعامل مع Missing Values.
+تحليل البيانات.
+تجهيز Features.
+Scikit-learn
+
+هنستخدمها في:
+
+Train/Test Split.
+Preprocessing.
+Classification.
+Regression.
+Evaluation.
+Cross-validation.
+Pipelines.
+MLxtend
+
+مهمة جداً لمشروع Association Rules؛ لأنها بتوفر Implementations لخوارزميات زي Apriori وFP-Growth وطرق استخراج Association Rules.
+
+3. Development Environment
+أنصح باستخدام:
+
+Jupyter Notebook
+
+ليه؟
+
+لأن المشروع قائم على تحليل البيانات، والـ Notebook بيسمح لنا ننفذ الكود خطوة بخطوة ونشوف النتائج والرسومات مباشرة.
+
+ممكن نستخدم:
+
+Jupyter Notebook محلياً.
+Google Colab.
+ولو الفريق مش عنده أجهزة قوية، Google Colab اختيار عملي.
+
+4. هل نحتاج Frontend وBackend؟
+دي نقطة محتاجة قرار هندسي.
+
+المتطلبات الرسمية لا تشترط إنشاء Web Application.
+
+هي بتطلب:
+
+Dataset.
+Preprocessing.
+Model.
+Prediction.
+Visualization.
+Evaluation.
+لكن لو عايزين المشروع يظهر بشكل متكامل واحترافي، أنصح بإنشاء واجهة تفاعلية.
+
+الـ Stack المقترح:
+
+Layer	Technology
+Programming	Python
+Data Processing	Pandas, NumPy
+ML	Scikit-learn, XGBoost
+Association	MLxtend
+Visualization	Matplotlib, Seaborn, Plotly
+Frontend	Streamlit
+Model Persistence	Joblib
+Development	Jupyter / VS Code
+Version Control	Git & GitHub
+ليه Streamlit؟
+Streamlit بتسمح لنا نبني Web Interface باستخدام Python مباشرةً، من غير الحاجة إلى إنشاء Backend منفصل باستخدام Django أو FastAPI وFrontend باستخدام React.
+
+وده مناسب جداً للمشروع؛ لأن الهدف الأساسي Data Mining، مش تطوير Web Application معقد.
+
+رابعاً: شكل النظام النهائي المقترح
+أنا أرشح إننا نعمل Dashboard واحدة تحتوي على 3 Modules.
+
+Dashboard Structure
+Home Page
+تحتوي على:
+
+Project Overview.
+Team Information.
+Project Objectives.
+عدد الـ Datasets.
+عدد الـ Models.
+Module 1: Customer Churn
+تحتوي على:
+
+Dataset Overview.
+Data Preprocessing.
+Exploratory Data Analysis.
+Model Training.
+Model Comparison.
+Evaluation Metrics.
+Confusion Matrix.
+ROC Curve.
+Customer Prediction Form.
+المستخدم يدخل بيانات العميل ويضغط Predict.
+
+النظام يعرض:
+
+Churn Prediction: Yes
+
+Churn Probability: 87%
+Module 2: Energy Consumption
+تحتوي على:
+
+Dataset Overview.
+Data Preprocessing.
+Energy Consumption Analysis.
+Model Training.
+Model Comparison.
+Actual vs Predicted.
+Residual Analysis.
+Energy Prediction Form.
+المستخدم يدخل الظروف المطلوبة ويضغط Predict.
+
+النظام يعرض:
+
+Predicted Energy Consumption:
+
+21.5 kWh
+Module 3: Product Recommendation
+تحتوي على:
+
+Dataset Overview.
+Transaction Analysis.
+Frequent Itemsets.
+Association Rules.
+Support / Confidence / Lift.
+Recommendation Interface.
+مثلاً المستخدم يختار Milk وBread.
+
+النظام يعرض المنتجات المقترحة بناءً على القواعد المستخرجة.
+
+خامساً: Architecture المشروع
+من الناحية الهندسية، لازم نفصل بين الـ Data Processing والـ Model Training والـ Application Interface.
+
+مش عايزين نحط كل حاجة في ملف Python واحد.
+
+أقترح Structure بالشكل التالي:
+
+Data-Mining-Project/
+│
+├── datasets/
+│   ├── classification/
+│   ├── regression/
+│   └── association/
+│
+├── notebooks/
+│   ├── churn_analysis.ipynb
+│   ├── energy_analysis.ipynb
+│   └── recommendation_analysis.ipynb
+│
+├── src/
+│   │
+│   ├── classification/
+│   │   ├── preprocessing.py
+│   │   ├── training.py
+│   │   ├── evaluation.py
+│   │   └── prediction.py
+│   │
+│   ├── regression/
+│   │   ├── preprocessing.py
+│   │   ├── training.py
+│   │   ├── evaluation.py
+│   │   └── prediction.py
+│   │
+│   └── association/
+│       ├── preprocessing.py
+│       ├── mining.py
+│       └── recommendation.py
+│
+├── models/
+│   ├── churn_model.pkl
+│   ├── energy_model.pkl
+│   └── association_rules.pkl
+│
+├── app/
+│   ├── app.py
+│   ├── pages/
+│   └── components/
+│
+├── reports/
+│   ├── classification/
+│   ├── regression/
+│   └── association/
+│
+├── tests/
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+ده Structure مقترح، مش شرط حرفياً نستخدم كل الملفات.
+
+لكن الفصل ده هيحقق فوائد مهمة:
+
+كل مشروع مستقل عن الثاني.
+سهولة مراجعة الكود.
+سهولة دمج شغل أعضاء الفريق.
+سهولة اختبار كل Module.
+سهولة تعديل الخوارزميات دون التأثير على باقي النظام.
+سادساً: أهم مرحلة — تقسيم المشروع على 7 أعضاء
+بما إنك حددت إن الفريق 7 أفراد، لازم نوزع المسؤوليات بطريقة تمنع التضارب وتضمن إن كل مشروع يكتمل.
+
+في رأيي، مينفعش نقسم الفريق إلى 3 مجموعات مستقلة تماماً ونسيب كل مجموعة تشتغل بمعزل عن الثانية؛ لأن فيه أجزاء مشتركة زي الـ Architecture والـ Integration والـ Testing.
+
+الأفضل نعمل توزيع مبني على Ownership.
+
+التوزيع المقترح
+Member	Role	Main Responsibility
+Member 1	Project Leader / Integration	Architecture, Code Review, Integration, Testing
+Member 2	Classification Engineer	Customer Churn
+Member 3	Classification Engineer	Churn Analysis, Evaluation, Visualization
+Member 4	Regression Engineer	Energy Consumption
+Member 5	Regression Engineer	Energy Analysis, Evaluation, Visualization
+Member 6	Association Engineer	Apriori / FP-Growth
+Member 7	Association & Application Engineer	Recommendation Logic, Dashboard Integration
+لكن لازم أوضح إن ده توزيع مبدئي.
+
+العضو المسؤول عن الـ Classification مثلاً مش المفروض يكتفي بكتابة Algorithm، بل يكون مسؤول عن الـ Pipeline بالكامل مع زميله.
+
+دورك كـ Project Leader
+أنا أرشح إنك تكون مسؤول عن:
+
+تحديد Architecture.
+تحديد Coding Standards.
+تحديد الـ Interfaces بين أجزاء المشروع.
+مراجعة Pull Requests.
+التأكد من صحة الـ Preprocessing.
+التأكد من عدم وجود Data Leakage.
+Integration.
+Testing.
+مراجعة نتائج الـ Models.
+التأكد من مطابقة المشروع للـ Rubric.
+تجهيز النسخة النهائية للتسليم.
+لكن مهم جداً إنك ما تتحولش إلى الشخص اللي بيعمل كل حاجة بنفسه.
+
+دورك هو ضمان إن كل جزء اتنفذ بالشكل الصحيح.
+
+سابعاً: خطة التنفيذ من البداية للنهاية
+أنا مش هقسم المشروع على أساس كتابة الكود فقط.
+
+هقسمه على أساس مراحل هندسية، بحيث كل مرحلة يكون ليها Deliverable واضح.
+
+Phase 1: Requirement Analysis & Dataset Selection
+الهدف: فهم المطلوب واختيار البيانات.
+
+المهام:
+
+قراءة وفهم الـ Requirements.
+تحديد الـ Target لكل مشروع.
+اختيار Dataset مناسبة.
+دراسة الأعمدة.
+التأكد من جودة البيانات.
+تحديد Algorithms المرشحة.
+Deliverables:
+
+Requirements Document.
+Dataset Documentation.
+Initial Project Architecture.
+Phase 2: Exploratory Data Analysis (EDA)
+دي مرحلة فهم البيانات قبل بناء أي Model.
+
+هنعمل:
+
+Dataset Shape.
+Data Types.
+Statistical Summary.
+Missing Values Analysis.
+Duplicate Analysis.
+Distribution Analysis.
+Correlation Analysis.
+Outlier Detection.
+الهدف إننا نفهم البيانات قبل ما نقرر هننظفها إزاي.
+
+Deliverables:
+
+EDA Notebooks.
+Initial Visualizations.
+Data Quality Report.
+Phase 3: Data Preprocessing
+هنا نبدأ تجهيز البيانات.
+
+كل مشروع له Pipeline مستقلة.
+
+Classification:
+
+Missing Values.
+Encoding.
+Scaling عند الحاجة.
+Imbalance Handling.
+Feature Selection.
+Outlier Handling.
+Regression:
+
+Missing Values.
+Encoding.
+Scaling عند الحاجة.
+Feature Selection.
+Outlier Handling.
+Association:
+
+Transaction Cleaning.
+Missing Values.
+Invalid Transactions.
+Duplicate Handling.
+Transaction Encoding.
+Deliverables:
+
+Cleaned Dataset.
+Preprocessing Pipeline.
+Documentation.
+Phase 4: Model Development
+نبدأ بناء الخوارزميات.
+
+Project	Baseline	Advanced
+Churn	Logistic Regression	Random Forest / XGBoost
+Energy	Linear Regression	Random Forest / XGBoost
+Recommendation	Apriori	FP-Growth
+نقارن النتائج ونحدد أفضل إعدادات.
+
+Phase 5: Evaluation
+نقيم كل مشروع بالمقاييس المطلوبة.
+
+Classification:
+
+Accuracy.
+Precision.
+Recall.
+F1.
+Confusion Matrix.
+ROC-AUC.
+Regression:
+
+MSE أو RMSE.
+R².
+Association:
+
+Support.
+Confidence.
+Lift.
+مهم جداً إننا نحتفظ بنتائج كل تجربة، مش بس أفضل نتيجة.
+
+Phase 6: Prediction
+نختبر النماذج باستخدام Inputs جديدة لم تدخل في التدريب.
+
+وده شرط رسمي في المشروع.
+
+مثلاً:
+
+عميل جديد في Churn.
+بيانات استهلاك جديدة في Energy.
+سلة مشتريات جديدة في Recommendation.
+Phase 7: Visualization
+نعرض النتائج باستخدام الرسومات المناسبة لكل مشروع.
+
+Phase 8: Integration
+نجمع الـ Modules الثلاثة في Dashboard واحدة.
+
+Phase 9: Testing & Final Review
+نختبر:
+
+صحة تحميل البيانات.
+صحة Preprocessing.
+صحة Model Loading.
+صحة Prediction.
+التعامل مع Missing Inputs.
+التعامل مع Invalid Inputs.
+صحة الرسومات.
+صحة Evaluation Metrics.
+عمل الـ Dashboard بالكامل.
+ثامناً: أخطر الأخطاء اللي ممكن تضيع درجات المشروع
+دي من أهم الأجزاء اللي عايزك تركز فيها بصفتك Project Manager.
+
+فيه أخطاء ممكن تحصل حتى لو الـ Model حقق نتائج ممتازة.
+
+1. Data Leakage
+ده من أخطر الأخطاء في Machine Learning.
+
+مثلاً لو عملنا:
+
+Scaling لكل البيانات.
+بعد كده Train/Test Split.
+كده الـ Scaler اتعلم معلومات من بيانات الاختبار.
+
+وده ممكن يخلي نتائجنا متفائلة وغير واقعية.
+
+الترتيب الصحيح:
+
+Raw Dataset
+     |
+Train/Test Split
+     |
+     |------------------|
+     |                  |
+ Training Data       Testing Data
+     |                  |
+ Fit Preprocessing     Transform
+     |                  |
+ Train Model            |
+     |                  |
+     |------------------|
+              |
+         Evaluation
+والأفضل نستخدم Scikit-learn Pipeline وColumnTransformer.
+
+2. استخدام Test Data أثناء اختيار الـ Model
+مينفعش نجرب Models على Test Set ونفضل نغير لحد ما نحقق أحسن نتيجة.
+
+الأفضل:
+
+Training Set.
+Validation Set أو Cross-validation.
+Test Set نهائية.
+والـ Test Set نستخدمها للتقييم النهائي.
+
+3. اختيار Accuracy فقط
+خصوصاً في Churn.
+
+Model يحقق 90% Accuracy ممكن يكون فاشل تماماً في اكتشاف العملاء اللي هيتركوا الشركة.
+
+4. استخدام Random Split مع Time Series
+في Energy Consumption، لازم نفهم طبيعة البيانات الزمنية قبل التقسيم.
+
+5. Association Rules بدون فهم Transaction Structure
+لو البيانات مش متجمعة صح حسب Invoice أو Transaction، النتائج ممكن تكون غير صحيحة.
+
+6. عدم اختبار Prediction ببيانات جديدة
+وجود Model متدرب مش معناه إن شرط Prediction اتحقق.
+
+لازم نثبت إن النظام يقدر يستقبل Input جديد ويطلع نتيجة.
+
+7. الاعتماد على Visualizations شكلية
+كل رسم لازم يجاوب على سؤال معين.
+
+مثلاً:
+
+Confusion Matrix: ما أنواع أخطاء Classification؟
+Residual Plot: هل Regression عنده نمط معين من الأخطاء؟
+Support/Confidence/Lift: هل القواعد المستخرجة مفيدة؟
+مش مجرد رسومات لملء التقرير.
+
+تاسعاً: نفهم توزيع الدرجات ونبني عليه
+الملف محدد إن التقييم 20 درجة:
+
+16 درجة للمشروع.
+4 درجات للأسئلة الفردية.
+والـ 16 درجة موزعة كالتالي:
+
+Requirement	Marks
+Dataset	2
+Preprocessing	4
+Train/Test Split or Cross-validation	1
+New Predictions	2
+Actual vs Predicted Visualization	2
+Evaluation Metrics	3
+Supporting Visualizations	2
+Total	16
+إزاي نضمن إننا محققين كل بند؟
+هعمل لك Checklist كأنها Acceptance Criteria للمشروع.
+
+Requirement	Acceptance Criteria
+Dataset	Dataset مناسبة وموثقة لكل مشروع
+Preprocessing	توثيق وتنفيذ الخطوات المطلوبة حسب طبيعة البيانات
+Train/Test	تقسيم صحيح وموثق
+Prediction	تجربة Inputs جديدة وإظهار النتائج
+Visualization	Actual vs Predicted للـ Regression ونتائج التصنيف المناسبة
+Evaluation	كل الـ Metrics المطلوبة محسوبة بشكل صحيح
+Supporting Visualizations	رسوم تحليلية تدعم كل مشروع
+ملاحظة مهمة: بند Actual vs Predicted في Classification لا يُعرض بنفس طريقة Regression؛ ممكن نعرض Actual مقابل Predicted باستخدام Confusion Matrix أو مقارنة الفئات، بالإضافة إلى Prediction Results. أما Regression فنستخدم Scatter Plot أو Line Plot لمقارنة القيم الفعلية والمتوقعة.
+
+عاشراً: إيه اللي لازم كل عضو يكون فاهمه للأسئلة الفردية؟
+بما إن فيه 4 درجات للأسئلة الفردية، فمينفعش كل عضو يفهم الجزء اللي اشتغل عليه فقط.
+
+أنا أرشح إن كل أعضاء الفريق يكون عندهم فهم جيد للنقاط دي:
+
+Data Mining Fundamentals
+What is Data Mining?
+What is Machine Learning?
+Supervised vs Unsupervised Learning.
+Classification vs Regression.
+Association Rule Mining.
+Features vs Target.
+Data Preprocessing
+Missing Values.
+Encoding.
+Scaling.
+Outliers.
+Feature Selection.
+Imbalanced Data.
+Data Leakage.
+Model Training
+Training vs Testing.
+Overfitting vs Underfitting.
+Cross-validation.
+Hyperparameter Tuning.
+Model Generalization.
+Project Algorithms
+كل عضو لازم يعرف:
+
+فكرة الخوارزمية.
+طريقة عملها.
+مميزاتها وعيوبها.
+ليه استخدمناها؟
+ليه اخترناها على البدائل؟
+إزاي قيمنا نتائجها؟
+Evaluation
+كل عضو لازم يعرف المقاييس الخاصة بالمشروعات الثلاثة، مش مشروعه فقط.
+
+الحادي عشر: قرارات هندسية أنصح بحسمها قبل كتابة أي كود
+فيه مجموعة قرارات لو متاخدتش من البداية، هتسبب مشاكل أثناء الدمج.
+
+Decision	My Recommendation
+Programming Language	Python
+Main ML Library	Scikit-learn
+Data Manipulation	Pandas + NumPy
+Classification Algorithms	Logistic Regression + Random Forest
+Regression Algorithms	Linear Regression + Random Forest
+Association Algorithms	Apriori + FP-Growth
+Visualization	Matplotlib + Seaborn + Plotly
+Interface	Streamlit
+Development Environment	VS Code + Jupyter
+Version Control	Git + GitHub
+Model Persistence	Joblib
+Data Processing	Independent Pipeline per Project
+وفيه قرارات إضافية مهمة:
+
+1. هل هنستخدم Dataset واحدة لكل مشروع؟
+
+أنصح بنعم في البداية؛ عشان نركز على جودة التنفيذ بدلاً من تشتيت الفريق بين مصادر بيانات كثيرة.
+
+2. هل هننفذ Algorithms من الصفر؟
+
+لا أنصح بذلك إلا لو الدكتور طلب Implementation من الصفر.
+
+استخدموا المكتبات المتخصصة، وافهموا الخوارزميات واشرحوها كويس.
+
+3. هل لازم نعمل Web Application؟
+
+مش شرط حسب الملف، لكن Streamlit Dashboard هتضيف قيمة كبيرة في العرض وتجربة الـ Predictions.
+
+4. هل لازم نستخدم Deep Learning؟
+
+لا.
+
+المشكلات الثلاثة دي ممكن تتنفذ بشكل ممتاز باستخدام Classical Machine Learning، ومفيش مبرر لإضافة Neural Networks لمجرد إنها أكثر تعقيداً.
+
+الثاني عشر: تقييمي النهائي للمشروع كـ Project Manager
+أنا شايف إن المشروع مشكلته الأساسية مش في صعوبة الخوارزميات.
+
+المشكلة الحقيقية في إدارة 3 أنواع مختلفة من Data Mining داخل مشروع واحد.
+
+كل مشروع له:
+
+Data Structure مختلفة.
+Preprocessing مختلف.
+Algorithms مختلفة.
+Evaluation Metrics مختلفة.
+Visualization مختلفة.
+Prediction Logic مختلف.
+وعشان كده لازم نفصل المسؤوليات، ونوحد طريقة العمل والـ Engineering Standards.
+
+الأولويات التي أوصي بها
+لو أنا المسؤول عن المشروع، هرتب الأولويات كالتالي:
+
+Priority	Task	Importance
+P0	اختيار Datasets المناسبة	Critical
+P0	فهم كل Dataset وأعمدتها	Critical
+P0	تحديد Preprocessing Pipeline	Critical
+P0	تنفيذ Models الأساسية	Critical
+P0	حساب Evaluation Metrics	Critical
+P0	New Predictions	Critical
+P1	Visualizations	High
+P1	مقارنة Algorithms	High
+P1	Integration في Dashboard	High
+P2	تحسين UI	Medium
+P2	إضافات اختيارية	Low
+القاعدة الأساسية: لا نضحي بصحة النتائج العلمية من أجل شكل التطبيق.
+
+ممكن نعمل Dashboard جميلة جداً، لكن لو فيه Data Leakage أو Evaluation غلط، المشروع علمياً ضعيف.
+
+وبالمثل، ممكن يكون عندنا Models ممتازة لكن مفيش Prediction Interface أو Visualizations مطلوبة، وبالتالي هنفقد درجات سهلة.
+
+الثالث عشر: الخلاصة — شكل المشروع اللي المفروض نوصل له
+في النهاية، المفروض يكون عندنا النظام التالي:
+
+Data Mining System
+
+يتكون من 3 أنظمة:
+
+1. Customer Churn Prediction
+
+Dataset: Telco Customer Churn.
+Preprocessing: Cleaning, Encoding, Scaling, Imbalance Handling.
+Algorithms: Logistic Regression, Random Forest, XGBoost.
+Evaluation: Accuracy, Precision, Recall, F1, Confusion Matrix, ROC-AUC.
+Output: Churn Prediction + Probability.
+2. Energy Consumption Prediction
+
+Dataset: Appliances Energy Prediction.
+Preprocessing: Cleaning, Encoding, Scaling, Outlier Handling.
+Algorithms: Linear Regression, Random Forest, XGBoost.
+Evaluation: MSE/RMSE, R².
+Output: Predicted Energy Consumption.
+3. Product Recommendation System
+
+Dataset: UCI Online Retail.
+Preprocessing: Transaction Cleaning, Encoding.
+Algorithms: Apriori, FP-Growth.
+Evaluation: Support, Confidence, Lift.
+Output: Recommended Products.
+وكل ده من خلال Dashboard واحدة باستخدام Streamlit.
+
+أخيراً: قبل ما نبدأ التنفيذ، فيه 4 حاجات لازم نحسمها
+مش عايز نبدأ نوزع Tasks أو نكتب كود قبل ما نتأكد إننا متفقين على Scope المشروع.
+
+1. هل الأفكار الثلاثة اللي ذكرتها مؤكدة بالفعل؟
+
+Customer Churn Prediction.
+Energy Consumption Prediction.
+Product Recommendation System.
+ولا لسه الدكتور هيحدد الأفكار بعد إغلاق التسجيل؟
+
+2. هل الدكتور طالب تنفيذ Algorithms بأنفسنا، ولا مسموح استخدام Libraries زي Scikit-learn وMLxtend؟
+
+دي نقطة مؤثرة جداً في تقدير حجم الشغل.
+
+3. هل مطلوب تسليم Application بواجهة رسومية، ولا المطلوب Notebooks وتقارير ونتائج فقط؟
+
+أنا أرشح Dashboard باستخدام Streamlit، لكن عايز نفرق بين المطلوب الرسمي والإضافات.
+
+4. هل عندكم Deadline محدد للمشروع؟
+
+لأن ده هيحدد طريقة تقسيم الـ Sprints وتوزيع المهام على السبعة أعضاء.
+
+بعد حسم النقاط دي، الخطوة الأهم هي إعداد Project Execution Plan كامل: اختيار الـ Datasets النهائية، تصميم Architecture، تحديد Deliverables لكل مشروع، ثم تقسيم المشروع إلى Tasks دقيقة على السبعة أعضاء مع Dependencies وAcceptance Criteria وReview Process، بحيث نقدر نتابع التنفيذ ونراجع كل جزء قبل دمجه.
+
+وملاحظة أخيرة: مفيش Software Project نقدر نضمن فيه نسبة خطأ صفر حرفياً، لكن نقدر نبني عملية تحقق واختبار ومراجعة علمية وهندسية تقلل احتمالات الأخطاء لأقصى درجة ممكنة، وده الهدف اللي لازم نمشي عليه.
+
+
+Context window full
+Start a new chat with an automatic summary of this conversation, or upgrade to continue here with more context available in every chat.
+
+
+
+
+Continued from
+تحليل مشروع تنقيب البيانات
+يلا بينا
+
+Worked for 8s
+
+تمام. دلوقتي هنشتغل على أهم Task في المشروع من ناحية إدارة التنفيذ: مهمتك أنت كـ Mostafa، قائد الفريق والمسؤول عن الـ Project Management والـ Integration والـ Review والـ Testing.
+
+خلّي بالك من نقطة مهمة: أنت مش مطلوب منك تنفّذ شغل الستة أعضاء بنفسك، ولا تكون خبيرًا في كل Algorithm. المطلوب إنك تضمن إن كل جزء اتنفّذ بشكل صحيح، وإن الأجزاء الثلاثة تشتغل مع بعض في مشروع واحد، وإن الفريق يقدر يشرح قراراته ونتائجه وقت المناقشة.
+
+Mostafa — Project Management, Integration, Testing & Final Delivery
+1. Role Overview
+Name: Mostafa
+Role: Project Leader — Project Management, Code Review, Integration, Testing & Final Delivery.
+
+You are responsible for managing the complete Data Mining project and ensuring that all three tasks are correctly implemented, integrated, tested, documented, and ready for presentation.
+
+The project consists of three independent Data Mining tasks:
+
+Classification: Customer Churn Prediction.
+
+Regression: Energy Consumption Prediction.
+
+Association Rules: Product Recommendation System.
+
+Your role is to coordinate the team, establish the project architecture, review the delivered work, ensure consistency between components, build the Streamlit application, and verify that the final project satisfies the academic requirements.
+
+You are not expected to implement every algorithm yourself. Your responsibility is to understand the overall workflow, evaluate the technical decisions, identify mistakes, and ensure that the final system works correctly.
+
+2. Your Main Responsibilities
+Your responsibilities are divided into seven main areas:
+
+Responsibility	Description
+Project Management	Plan tasks, assign responsibilities, monitor progress, and manage deadlines.
+Architecture & Repository	Establish the folder structure, Git workflow, and integration contracts.
+Code Review	Review team members' code before merging it into the development branch.
+Integration	Connect the three Data Mining tasks into one unified application.
+Streamlit Development	Build the interface through which users can interact with the three tasks.
+Testing & Validation	Verify preprocessing, predictions, evaluation metrics, and application behavior.
+Final Documentation	Prepare the README, project explanation, presentation, and final checklist.
+3. Phase One — Project Setup & Architecture
+3.1. Create the GitHub Repository
+Create one central repository for the entire project.
+
+Suggested repository name:
+
+Data-Mining-Project
+
+The repository must contain all three tasks, shared utilities, the Streamlit application, documentation, and final results.
+
+3.2. Establish the Folder Structure
+Create the following structure:
+
+Data-Mining-Project/
+│
+├── datasets/
+│   ├── classification/
+│   ├── regression/
+│   └── association/
+│
+├── notebooks/
+│   ├── classification_eda.ipynb
+│   ├── classification_models.ipynb
+│   ├── regression_eda.ipynb
+│   ├── regression_models.ipynb
+│   ├── association_eda.ipynb
+│   └── association_rules.ipynb
+│
+├── src/
+│   ├── classification/
+│   │   ├── preprocessing.py
+│   │   └── model.py
+│   │
+│   ├── regression/
+│   │   ├── preprocessing.py
+│   │   └── model.py
+│   │
+│   ├── association/
+│   │   ├── preprocessing.py
+│   │   ├── model.py
+│   │   └── recommendations.py
+│   │
+│   └── utils/
+│       ├── metrics.py
+│       └── visualization.py
+│
+├── models/
+│   ├── classification/
+│   ├── regression/
+│   └── association/
+│
+├── results/
+│   ├── classification/
+│   ├── regression/
+│   └── association/
+│
+├── app/
+│   ├── app.py
+│   └── pages/
+│       ├── classification.py
+│       ├── regression.py
+│       └── association.py
+│
+├── docs/
+│   ├── project_overview.md
+│   ├── architecture.md
+│   └── testing.md
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+Important Notes
+datasets/: Stores the original and cleaned datasets.
+
+notebooks/: Contains exploration, experiments, and analysis.
+
+src/: Contains reusable Python implementation.
+
+models/: Stores trained models and serialized artifacts.
+
+results/: Stores evaluation results, charts, and exported outputs.
+
+app/: Contains the Streamlit application.
+
+docs/: Contains technical documentation.
+
+Do not let team members put all their code inside one notebook. Notebooks are useful for experimentation, but the final application should import reusable functions from src/.
+
+3.3. Git Workflow
+Use the following branches:
+
+main
+  |
+develop
+  |
+feature/classification
+feature/regression
+feature/association
+feature/streamlit
+The expected workflow:
+
+Each member works on their assigned feature branch.
+
+The member commits and pushes the implementation.
+
+The member creates a Pull Request targeting develop.
+
+You review the code and test it.
+
+If everything is correct, merge the PR into develop.
+
+If problems exist, request changes before merging.
+
+After final integration and testing, merge the stable version into main.
+
+Important: Do not merge a PR just because the code runs on the author's machine. It must satisfy the task's acceptance criteria.
+
+4. Phase Two — Define Integration Contracts
+This is one of your most important responsibilities.
+
+The team members are working independently. Without agreed interfaces, you may receive three implementations that work individually but cannot be connected easily.
+
+Before implementation begins, define what each task must deliver and how the Streamlit application will communicate with it.
+
+4.1. Classification Integration Contract
+Responsible members:
+
+Febronia: Dataset Understanding & Preprocessing.
+
+Rovan: Model Development & Evaluation.
+
+Expected outputs:
+
+src/classification/
+├── preprocessing.py
+└── model.py
+
+models/classification/
+└── best_churn_model.pkl
+
+results/classification/
+├── classification_metrics.csv
+├── confusion_matrix.png
+├── roc_curve.png
+└── model_comparison.csv
+The classification implementation must provide:
+
+A trained classification model.
+
+A reusable prediction function.
+
+A way to obtain the prediction probability.
+
+Evaluation metrics.
+
+Confusion Matrix visualization.
+
+ROC Curve visualization.
+
+A comparison between the implemented algorithms.
+
+Suggested public interface:
+
+def predict_churn(input_data):
+    """
+    Receives customer features and returns:
+    - Predicted class
+    - Probability of churn
+    """
+The Streamlit application should not need to know the internal details of Logistic Regression or Random Forest.
+
+It should only call the prediction function and display the result.
+
+4.2. Regression Integration Contract
+Responsible members:
+
+Monzer: Dataset Understanding & Preprocessing.
+
+Ebrahim: Model Development & Evaluation.
+
+Expected outputs:
+
+src/regression/
+├── preprocessing.py
+└── model.py
+
+models/regression/
+└── best_energy_model.pkl
+
+results/regression/
+├── regression_metrics.csv
+├── actual_vs_predicted.png
+├── residual_plot.png
+└── model_comparison.csv
+The regression implementation must provide:
+
+A trained regression model.
+
+A reusable prediction function.
+
+MSE.
+
+RMSE.
+
+R² Score.
+
+Actual vs Predicted visualization.
+
+Model comparison.
+
+Suggested public interface:
+
+def predict_energy(input_data):
+    """
+    Receives environmental and usage features
+    and returns predicted energy consumption.
+    """
+The application should display the predicted energy consumption clearly.
+
+Important technical consideration:
+
+The Energy Consumption dataset contains timestamped observations.
+
+You must review Monzer and Ebrahim's splitting strategy and ensure that future observations do not leak into training data when the intended use is forecasting.
+
+Also, distinguish between predicting energy consumption using measurements from the same time period and forecasting future consumption. These are not necessarily the same problem.
+
+4.3. Association Rules Integration Contract
+Responsible members:
+
+Basmala: Dataset Understanding & Preprocessing.
+
+Marwa: Apriori & Recommendation System.
+
+Expected outputs:
+
+src/association/
+├── preprocessing.py
+├── model.py
+└── recommendations.py
+
+models/association/
+└── association_rules.csv
+
+results/association/
+├── frequent_itemsets.csv
+├── association_rules.csv
+├── top_rules.png
+└── association_visualization.png
+The implementation must provide:
+
+A cleaned transaction dataset.
+
+A binary transaction basket.
+
+Frequent itemsets.
+
+Association rules.
+
+Support.
+
+Confidence.
+
+Lift.
+
+A recommendation function.
+
+Suggested public interface:
+
+def recommend_products(selected_products, top_n=5):
+    """
+    Receives a list of selected products
+    and returns recommended products.
+    """
+Example:
+
+selected_products = [
+    "Product A",
+    "Product B"
+]
+
+recommendations = recommend_products(
+    selected_products,
+    top_n=5
+)
+The recommendation function should:
+
+Find rules whose antecedents match the selected products.
+
+Exclude products already selected.
+
+Rank the remaining recommendations.
+
+Return the recommended products with relevant rule metrics.
+
+Important: The Association Rules task is not a traditional supervised learning problem. Do not force it into a classification or regression pipeline. Its evaluation should use Support, Confidence, and Lift, including evaluation on held-out transactions if the team uses a transaction-level train/test split.
+
+5. Phase Three — Code Review
+You are responsible for reviewing every Pull Request before it gets merged into develop.
+
+Your review should cover five levels.
+
+5.1. Code Structure
+Check:
+
+Is the code organized into appropriate files?
+
+Are functions reusable?
+
+Are variable and function names understandable?
+
+Is there unnecessary duplicated code?
+
+Are notebook experiments separated from the final implementation?
+
+5.2. Data Preprocessing
+This is especially important because preprocessing mistakes can make the model evaluation unreliable.
+
+Verify:
+
+Missing values are handled correctly.
+
+Duplicate records are investigated and handled.
+
+Categorical features are encoded appropriately.
+
+Independent variables and target variables are separated correctly.
+
+Feature scaling is applied when appropriate.
+
+Outliers are investigated rather than automatically deleted.
+
+Feature selection is justified.
+
+Class imbalance is checked before choosing a treatment.
+
+Critical: Data Leakage
+Make sure the team follows this order:
+
+Original Dataset
+       |
+       v
+Train/Test Split
+       |
+       v
+Fit Preprocessing on Training Data
+       |
+       v
+Transform Training Data
+       |
+       v
+Transform Test Data
+       |
+       v
+Train Model
+       |
+       v
+Evaluate Model
+Never allow the team to fit the scaler, imputer, encoder, or feature selector on the complete dataset before splitting.
+
+For oversampling or SMOTE, the operation must happen only on the training data, preferably inside an appropriate imbalanced-learn Pipeline.
+
+5.3. Model Implementation
+Check:
+
+Are the selected algorithms appropriate for the task?
+
+Is the model trained using the correct features?
+
+Is the target variable correct?
+
+Are predictions generated from unseen test data?
+
+Are multiple algorithms compared fairly?
+
+Are the model parameters and random seeds documented where appropriate?
+
+5.4. Evaluation
+Verify that the metrics match the task.
+
+Task	Required Evaluation
+Classification	Accuracy, Precision, Recall, F1-Score, Confusion Matrix, ROC-AUC
+Regression	MSE or RMSE, R² Score
+Association Rules	Support, Confidence, Lift
+Do not accept a model merely because its accuracy or R² is high.
+
+You must understand how the results were obtained and whether the evaluation method is valid.
+
+5.5. Visualization
+Make sure each task includes visualizations that actually explain its results.
+
+Examples:
+
+Classification
+
+Churn distribution.
+
+Confusion Matrix.
+
+ROC Curve.
+
+Model comparison.
+
+Regression
+
+Target distribution.
+
+Correlation heatmap.
+
+Actual vs Predicted.
+
+Residual plot.
+
+Model comparison.
+
+Association Rules
+
+Top frequent itemsets.
+
+Support vs Confidence.
+
+Support vs Lift.
+
+Top association rules.
+
+6. Phase Four — Streamlit Application
+You are responsible for integrating the three tasks into one interactive application.
+
+Use Streamlit because it is suitable for building a lightweight Python-based interface without introducing another frontend/backend stack.
+
+6.1. Application Structure
+The application should contain four main sections:
+
+Home Page
+Display:
+
+Project title.
+
+Team members.
+
+Project overview.
+
+Explanation of the three Data Mining tasks.
+
+Navigation to each task.
+
+Classification Page — Customer Churn Prediction
+The user should be able to:
+
+Enter customer information.
+
+Submit the input.
+
+Receive a prediction.
+
+View the predicted class.
+
+View churn probability.
+
+Explore the model evaluation results.
+
+Example output:
+
+Customer Churn Prediction
+
+Prediction: Likely to Churn
+
+Churn Probability: 78%
+
+Model: Random Forest
+The displayed probability must come from the actual trained model, not a hardcoded value.
+
+Regression Page — Energy Consumption Prediction
+The user should be able to:
+
+Enter the required environmental and usage features.
+
+Submit the input.
+
+Receive the predicted energy consumption.
+
+View model evaluation results.
+
+Explore Actual vs Predicted visualization.
+
+Example:
+
+Energy Consumption Prediction
+
+Predicted Consumption: 85.6 Wh
+Use the target's actual unit and meaning as documented by the dataset. Do not invent a unit.
+
+Association Rules Page — Product Recommendation
+The user should be able to:
+
+Select one or more products.
+
+Submit the selection.
+
+Receive recommended products.
+
+View Support, Confidence, and Lift for the relevant rules.
+
+Example:
+
+Selected Products:
+- Product A
+- Product B
+
+Recommended Products:
+1. Product C
+2. Product D
+3. Product E
+6.2. Streamlit Implementation Requirements
+Your application must:
+
+Load the trained models and rule files.
+
+Use the actual prediction/recommendation functions.
+
+Handle invalid inputs.
+
+Handle missing or unavailable model files gracefully.
+
+Display evaluation metrics.
+
+Display saved visualizations.
+
+Use a consistent layout and clear navigation.
+
+Do not implement the algorithms again inside Streamlit. Import the reusable functions from src/.
+
+Suggested command:
+
+streamlit run app/app.py
+7. Phase Five — Testing
+You are responsible for verifying the complete project before final delivery.
+
+Testing should happen at three levels.
+
+7.1. Component Testing
+Test each task independently.
+
+Classification
+Can the model be loaded?
+
+Can it receive a valid customer input?
+
+Does it return a valid class?
+
+Does it return a probability when supported?
+
+Are the evaluation metrics available?
+
+Regression
+Can the model be loaded?
+
+Can it receive valid input?
+
+Does it return a numerical prediction?
+
+Are MSE, RMSE, and R² available?
+
+Association Rules
+Can the rules be loaded?
+
+Can the recommendation function receive selected products?
+
+Does it return valid recommendations?
+
+Does it avoid recommending products already selected?
+
+Are the rule metrics available?
+
+7.2. Integration Testing
+Test the complete application.
+
+Example:
+
+Run Streamlit
+      |
+      v
+Open Home Page
+      |
+      v
+Open Classification Page
+      |
+      v
+Submit Customer Information
+      |
+      v
+Receive Prediction
+      |
+      v
+Open Regression Page
+      |
+      v
+Receive Energy Prediction
+      |
+      v
+Open Association Rules Page
+      |
+      v
+Receive Recommendations
+Verify that moving between pages does not cause import errors, missing-file errors, or unexpected application crashes.
+
+7.3. Edge Case Testing
+Test cases that may expose problems.
+
+Classification
+
+Missing input values.
+
+Invalid categorical values.
+
+Unexpected numerical values.
+
+Regression
+
+Missing features.
+
+Negative values where they are invalid.
+
+Extremely large or unrealistic inputs.
+
+Association Rules
+
+Empty product selection.
+
+Unknown product.
+
+Product combination with no matching rules.
+
+Selection containing products that have no recommendations.
+
+The application should provide understandable messages instead of crashing.
+
+7.4. Final Testing Checklist
+
+All three tasks work independently.
+
+
+All three tasks work inside Streamlit.
+
+
+All models and rule files load correctly.
+
+
+New input predictions work.
+
+
+Evaluation metrics are displayed.
+
+
+Required visualizations are available.
+
+
+Invalid inputs are handled.
+
+
+No major data leakage issues exist.
+
+
+The repository can be cloned and executed using the README instructions.
+
+
+The final version is merged into main.
+
+8. Phase Six — Documentation
+You are responsible for ensuring that the final README explains the project clearly.
+
+Suggested README structure:
+
+# Data Mining Project
+
+## 1. Project Overview
+
+## 2. Team Members
+
+## 3. Technologies Used
+
+## 4. Project Structure
+
+## 5. Task One: Customer Churn Prediction
+   - Problem Description
+   - Dataset
+   - Preprocessing
+   - Algorithms
+   - Evaluation Metrics
+   - Results
+
+## 6. Task Two: Energy Consumption Prediction
+   - Problem Description
+   - Dataset
+   - Preprocessing
+   - Algorithms
+   - Evaluation Metrics
+   - Results
+
+## 7. Task Three: Product Recommendation System
+   - Problem Description
+   - Dataset
+   - Preprocessing
+   - Apriori Algorithm
+   - Association Rules
+   - Recommendations
+
+## 8. Application Screenshots
+
+## 9. Installation & Execution
+
+## 10. Team Contributions
+The README should include:
+
+A clear explanation of each problem.
+
+Dataset sources.
+
+Algorithms used.
+
+Preprocessing techniques.
+
+Evaluation metrics and actual results.
+
+Application screenshots.
+
+Installation instructions.
+
+Team contributions.
+
+Never invent results or write expected metrics as if they were actual experimental results.
+
+9. Phase Seven — Presentation Preparation
+Your responsibility is to make sure the team can explain the project, not just run it.
+
+Prepare a presentation that follows this structure:
+
+Slide 1 — Project Introduction
+Project title.
+
+Team members.
+
+Project objectives.
+
+Slide 2 — Data Mining Overview
+What Data Mining means.
+
+The three tasks implemented.
+
+Slide 3 — Classification
+Customer Churn problem.
+
+Dataset.
+
+Preprocessing.
+
+Algorithms.
+
+Evaluation results.
+
+Slide 4 — Regression
+Energy Consumption problem.
+
+Dataset.
+
+Preprocessing.
+
+Algorithms.
+
+Evaluation results.
+
+Slide 5 — Association Rules
+Product Recommendation problem.
+
+Dataset.
+
+Apriori.
+
+Support, Confidence, Lift.
+
+Recommendation examples.
+
+Slide 6 — Application
+Streamlit interface.
+
+Demonstration of the three tasks.
+
+Slide 7 — Results & Conclusion
+Main findings.
+
+Challenges.
+
+Future improvements.
+
+Slide 8 — Questions
+Prepare the team for individual questions.
+
+Each member must understand their assigned task and the reasoning behind its implementation.
+
+10. Two-Week Execution Plan
+Your work should be distributed across the two-week deadline.
+
+Day	Your Main Responsibility	Expected Result
+Day 1	Create repository, architecture, branches, and assign tasks.	Project foundation ready.
+Day 2	Define integration contracts and review dataset/preprocessing plans.	Clear interfaces and agreed technical decisions.
+Day 3	Review EDA and preprocessing progress.	Dataset understanding validated.
+Day 4	Review preprocessing implementations.	Cleaned data and preprocessing pipelines.
+Day 5	Review initial model implementations.	First working versions of the three tasks.
+Day 6	Review evaluation and visualization.	Metrics and plots available.
+Day 7	Check model comparisons and prediction functions.	Core task implementations completed.
+Day 8	Start integration and prepare Streamlit pages.	First integrated application.
+Day 9	Connect classification and regression.	Two tasks working in the application.
+Day 10	Connect association rules.	Three tasks integrated.
+Day 11	Perform component and integration testing.	Major issues identified and fixed.
+Day 12	Complete UI, documentation, and visualizations.	Application and documentation ready.
+Day 13	Full testing and presentation preparation.	Release candidate ready.
+Day 14	Final review, demonstration, and delivery.	Final project submitted.
+Do not wait until Day 10 to discover whether the members' code can be integrated.
+
+Start reviewing interfaces and file structures early.
+
+11. Definition of Done — Your Acceptance Criteria
+Your task is considered complete only when all the following conditions are satisfied.
+
+Project Management
+
+Repository is organized.
+
+
+Branching strategy is followed.
+
+
+Each member has clear responsibilities.
+
+
+Progress is tracked.
+
+
+Dependencies between tasks are respected.
+
+Code Review
+
+All six members' implementations have been reviewed.
+
+
+Major preprocessing issues have been addressed.
+
+
+Data leakage has been checked.
+
+
+Models and evaluation methods have been validated.
+
+
+Pull Requests have been merged only after approval.
+
+Integration
+
+Classification works.
+
+
+Regression works.
+
+
+Association Rules work.
+
+
+All components use agreed interfaces.
+
+
+The application loads the required artifacts.
+
+Streamlit
+
+Home page is available.
+
+
+Classification page works.
+
+
+Regression page works.
+
+
+Association Rules page works.
+
+
+New predictions and recommendations work.
+
+Testing
+
+Component testing is complete.
+
+
+Integration testing is complete.
+
+
+Edge cases are tested.
+
+
+No critical runtime errors remain.
+
+Final Delivery
+
+README is complete.
+
+
+Presentation is ready.
+
+
+Actual evaluation results are documented.
+
+
+All team members are prepared for individual questions.
+
+
+Final version is available in main.
+
+12. Important Technical Knowledge You Must Understand
+You do not need to become the primary implementer of every task, but you must understand enough to review the work.
+
+Prioritize these topics:
+
+The difference between Classification, Regression, and Association Rules.
+
+The Machine Learning Process.
+
+Independent variables (X) and dependent variable (y).
+
+Missing values and duplicate handling.
+
+Nominal and ordinal categorical variables.
+
+OneHotEncoder and LabelEncoder.
+
+Feature scaling: Normalization and Standardization.
+
+Train/Test Split and Cross-validation.
+
+Overfitting and Underfitting.
+
+Data Leakage.
+
+Classification evaluation metrics.
+
+Regression evaluation metrics.
+
+Apriori and Association Rules.
+
+Support, Confidence, and Lift.
+
+Model serialization using Joblib.
+
+Python modules, imports, and reusable functions.
+
+Git branches, commits, Pull Requests, and merging.
+
+Streamlit fundamentals.
+
+Your most important review skill is not memorizing every algorithm. It is being able to ask:
+
+Why did you choose this algorithm?
+
+Why did you apply this preprocessing step?
+
+How did you avoid data leakage?
+
+Why is this evaluation metric appropriate?
+
+What does this result actually mean?
+
+Can the model predict a new observation?
+
+Can we reproduce the same result?
+
+If you can answer these questions and verify the implementation, you are performing your leadership role correctly.
+
+13. Common Mistakes You Must Prevent
+Allowing members to work without agreed interfaces.
+
+Merging code without reviewing it.
+
+Treating notebook execution as proof that the final application works.
+
+Fitting preprocessing transformations before the train/test split.
+
+Applying SMOTE to the entire dataset.
+
+Using random splitting for time-dependent forecasting without justification.
+
+Treating Association Rules as a supervised classification problem.
+
+Displaying hardcoded predictions in Streamlit.
+
+Comparing models using inconsistent datasets or evaluation procedures.
+
+Leaving integration until the last few days.
+
+Saving model artifacts without documenting how to load them.
+
+Writing results in the README before verifying the actual experiments.
+
+14. Your Final Leadership Objective
+Your job is to deliver one coherent Data Mining project, not three unrelated notebooks.
+
+The six members are responsible for the technical implementation of their assigned parts.
+
+You are responsible for ensuring that:
+
+Their work follows the same project structure.
+
+Their implementations are technically valid.
+
+Their outputs can be integrated.
+
+The application works as one system.
+
+The project satisfies the grading requirements.
+
+The team understands what it has built.
+
+The final target is a reproducible, integrated, tested, and explainable Data Mining project that demonstrates Classification, Regression, and Association Rules through one application.
+
+دلوقتي عايز ألفت نظرك لـ 3 قرارات إدارية مهمة جدًا
+1. متبدأش Streamlit بدري قبل ما تحدد الـ Integration Contracts
+أنت ممكن تبدأ تعمل شكل الـ Home Page والـ Navigation من بدري، لكن متربطش صفحات الـ Classification والـ Regression والـ Association بالـ implementation النهائي قبل ما تعرف:
+
+أسماء الـ functions.
+شكل الـ inputs.
+شكل الـ outputs.
+مكان الـ model files.
+طريقة تحميل الـ models.
+غير كده هتضطر تعدّل في شغلك كل شوية بسبب اختلاف طريقة تنفيذ الأعضاء.
+
+2. أنت المسؤول عن الـ Integration، مش عن إعادة كتابة شغل الأعضاء
+لو Rovan سلّم Model شغال، وEbrahim سلّم Model شغال، وMarwa سلّمت Recommendation Function شغالة، دورك إنك تراجعهم وتربطهم.
+
+لو لقيت مشكلة، ترجعها لصاحب الـ Task يصلحها، إلا لو المشكلة في الـ integration نفسه.
+
+3. متعتبرش إن ارتفاع الـ Metrics معناه إن المشروع صحيح
+ممكن تلاقي Classification Accuracy عالية جدًا، لكن بسبب Data Leakage.
+
+وممكن تلاقي Regression R² مرتفع، لكن بسبب إن الـ Model اتدرّب بطريقة غير مناسبة لطبيعة البيانات.
+
+وممكن Association Rules تطلع Rules كثيرة، لكنها مش مفيدة تجاريًا.
+
+أنت لازم تراجع صحة التجربة قبل ما تراجع جمال النتيجة.
+
+الخطوة التالية: نثبت طريقة إدارتك للمشروع
+أنا شايف إن أهم حاجة نعملها قبل ما الأعضاء يبدأوا التنفيذ هي إنشاء Project Management System على Trello يربط كل Task بالمسؤول عنها والـ Dependencies والـ Deliverables والـ Acceptance Criteria.
+
+وبعدها نجهز Integration Contracts فعلية لكل عضو، بحيث محدش يكتب كود بمعزل عن باقي الفريق. 
+
+
+
+
+Ad
+
+
+
+
+⋮⋮⋮⋮
