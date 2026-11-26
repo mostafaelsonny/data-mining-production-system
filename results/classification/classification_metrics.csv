@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,F1-Score,ROC-AUC,TN,FP,FN,TP
+RandomForestClassifier,0.77,0.5504,0.7299,0.6276,0.8432,812,223,101,273

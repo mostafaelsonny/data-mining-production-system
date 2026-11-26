@@ -1,0 +1,4 @@
+Model,CV_5Fold_Accuracy,CV_5Fold_Precision,CV_5Fold_Recall,CV_5Fold_F1,CV_5Fold_ROC_AUC,Accuracy,Precision,Recall,F1-Score,ROC-AUC
+Random Forest,0.7806,0.5694,0.7117,0.6326,0.8443,0.77,0.5504,0.7299,0.6276,0.8432
+Logistic Regression,0.7552,0.526,0.7906,0.6315,0.8447,0.7395,0.5059,0.7968,0.6189,0.84
+XGBoost,0.7879,0.586,0.6849,0.6315,0.8459,0.7722,0.558,0.6818,0.6137,0.843

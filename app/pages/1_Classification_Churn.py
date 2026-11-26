@@ -91,3 +91,21 @@ with tab2:
             st.image(roc_path)
         else:
             st.caption("Waiting for roc_curve.png")
+
+    comp_csv = "results/classification/model_comparison.csv"
+    if os.path.exists(comp_csv):
+        st.divider()
+        st.markdown("**Model Comparison (5-Fold Stratified CV & Held-Out Test)**")
+        st.dataframe(pd.read_csv(comp_csv), use_container_width=True)
+
+    col_c, col_d = st.columns(2)
+    with col_c:
+        pva_path = "results/classification/predicted_vs_actual.png"
+        if os.path.exists(pva_path):
+            st.markdown("**Predicted vs. Actual Results**")
+            st.image(pva_path)
+    with col_d:
+        fi_path = "results/classification/feature_importance.png"
+        if os.path.exists(fi_path):
+            st.markdown("**Top Churn Drivers (Feature Importance)**")
+            st.image(fi_path)
