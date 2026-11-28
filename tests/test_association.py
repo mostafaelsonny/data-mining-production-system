@@ -11,6 +11,7 @@ from src.association.preprocessing import (
     build_basket_matrix,
     save_basket,
 )
+from src.contracts import validate_basket_matrix
 
 COLUMNS = ['InvoiceNo', 'StockCode', 'Description', 'Quantity', 'UnitPrice', 'Country']
 
@@ -22,8 +23,10 @@ def _sample_raw_df():
         ('536366', '22633', 'HAND WARMER UNION JACK', 6, 1.85, 'United Kingdom'),  # single-item basket
         ('C536379', '22633', 'HAND WARMER UNION JACK', -1, 1.85, 'United Kingdom'),  # cancelled
         ('536367', '71053', 'WHITE METAL LANTERN', 0, 3.39, 'United Kingdom'),  # quantity 0
+        ('536373', '71053', 'WHITE METAL LANTERN', -2, 3.39, 'United Kingdom'),  # negative quantity
         ('536368', '71053', 'WHITE METAL LANTERN', 2, 0.0, 'United Kingdom'),  # price 0
         ('536369', 'POST', 'POSTAGE', 1, 18.0, 'United Kingdom'),  # non-product
+        ('536372', 'DOT', 'DOTCOM POSTAGE', 1, 569.77, 'United Kingdom'),  # non-product
         ('536370', '21730', None, 1, 1.0, 'United Kingdom'),  # missing description
         ('A563185', 'B', 'Adjust bad debt', 1, 11062.06, 'United Kingdom'),  # bad debt
         ('536371', '71053', 'WHITE METAL LANTERN', 3, 3.39, 'France'),
@@ -41,6 +44,7 @@ def test_clean_retail_data_removes_invalid_rows():
     assert (cleaned['UnitPrice'] > 0).all()
     assert cleaned['Description'].notna().all()
     assert not cleaned['InvoiceNo'].str.startswith(('C', 'A')).any()
+    assert not cleaned['Description'].str.upper().isin(['POSTAGE', 'DOTCOM POSTAGE']).any()
 
 
 def test_build_basket_matrix_is_bool_with_min_two_items(tmp_path):
@@ -52,6 +56,7 @@ def test_build_basket_matrix_is_bool_with_min_two_items(tmp_path):
     assert list(basket.index) == ['536365']
     assert (basket.dtypes == bool).all()
     assert (basket.sum(axis=1) >= 2).all()
+    assert validate_basket_matrix(basket) is True
 
 
 def test_build_basket_matrix_defaults():
